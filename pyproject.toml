@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "kursov-5"
+version = "0.1.0"
+description = ""
+authors = ["alister <lhadkov@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "^1.0.0"
+psycopg2-binary = "^2.9.7"
+requests = "^2.31.0"
+configparser = "^6.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
