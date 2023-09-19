@@ -4,7 +4,7 @@ import psycopg2
 
 def create_database(database_name: str, params: dict) -> None:
     '''
-    Создание базы данных и таблиц для сохранения данных о каналах и видео.
+    Создание базы данных и таблиц для сохранения данных вакансий и компаний.
     :param database_name: название базы данных для создания
     :param params: Параметры для подключения к базе данных
     :return: None
