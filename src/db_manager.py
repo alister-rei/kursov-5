@@ -1,3 +1,5 @@
+from _decimal import Decimal
+
 import psycopg2
 
 
@@ -60,7 +62,7 @@ class DBManager:
                         FROM vacancies
                     """
                 )
-                rows = cur.fetchall()
+                rows = cur.fetchone()
                 return rows
 
     def get_vacancies_with_higher_salary(self):
@@ -78,7 +80,20 @@ class DBManager:
                     """
                 )
                 rows = cur.fetchall()
-                return rows
+                formatted_rows = []
+                for row in rows:
+                    col0 = row[0]
+                    col1 = row[1]
+                    col2 = row[2].strftime("%Y-%m-%d")
+                    col3 = row[3]
+                    col4 = row[4]
+                    col5 = row[5]
+                    col6 = row[6]
+                    col7 = row[7]
+                    col8 = row[8]
+                    col9 = row[9]
+                    formatted_rows.append((col0, col1, col2, col3, col4, col5, col6, col7, col8, col9))
+                return formatted_rows
 
     def get_vacancies_with_keyword(self, keyword: str):
         """
@@ -95,4 +110,17 @@ class DBManager:
                      """
                 )
                 rows = cur.fetchall()
-                return rows
+                formatted_rows = []
+                for row in rows:
+                    col0 = row[0]
+                    col1 = row[1]
+                    col2 = row[2].strftime("%Y-%m-%d")
+                    col3 = row[3]
+                    col4 = row[4]
+                    col5 = row[5]
+                    col6 = row[6]
+                    col7 = row[7]
+                    col8 = row[8]
+                    col9 = row[9]
+                    formatted_rows.append((col0, col1, col2, col3, col4, col5, col6, col7, col8, col9))
+                return formatted_rows
