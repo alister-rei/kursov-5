@@ -36,7 +36,7 @@ def main():
         5 - вывести список всех вакансий, в названии которых содержатся переданное в метод слово python.
             """
         )
-        user_choice = int(input("введите код для просмотра данных"))
+        user_choice = int(input("введите код для просмотра данных: "))
         if user_choice == 0:
             break
 
@@ -56,7 +56,7 @@ def main():
             dbmanager = DBManager(DBNAME, PARAMS)
             rows = dbmanager.get_avg_salary()
             for row in rows:
-                print(row)
+                print(f"средняя зарплата по вакансиям : {round(row, 1)}")
 
         elif user_choice == 4:
             dbmanager = DBManager(DBNAME, PARAMS)
